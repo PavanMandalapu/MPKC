@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #c7a6a6;
+      margin: 20px;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    input[type="email"],
+    input[type="password"],
+    button {
+      width: 50%;
+      padding: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+  <body>
+    <h1>Login</h1>
+    <% if (error_msg) { %>
+      <p><%= error_msg %></p>
+    <% } %>
+    <form action="/users/login" method="post">
+      <label for="email">Email:</label>
+      <input type="email" name="email"  id="email" placeholder="Email" required></br>
+      <label for="password">Password:</label>
+      <input type="password" name="password" placeholder="Password" required></br>
+      <button type="submit">Login</button>
+    </form>
+  </body>
+  </html>
